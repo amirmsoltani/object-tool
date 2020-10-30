@@ -61,5 +61,5 @@
   },
   "include": [
     "src"
-  ]
+, "test/filter.test.ts"  ]
 }

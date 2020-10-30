@@ -2,8 +2,12 @@
   "name": "object-tool",
   "version": "1.0.0",
   "description": "This package was created for various operations on objects in JavaScript",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib",
   "repository": "https://github.com/amirmsoltani/object-tool",
   "author": "amirmsoltani",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.0.5"
+  }
 }

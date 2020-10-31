@@ -6,6 +6,13 @@
   "unpkg": "dist/index.js",
   "module": "es/index.js",
   "typings": "./index.d.ts",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "src",
+    "index.d.ts"
+  ],
   "author": {
     "name": "Amir mohammad S.",
     "email": "amirsoltanik78@gmail.com"
@@ -51,9 +58,20 @@
   },
   "scripts": {
     "test": "jest",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "rollup -c",
-    "build": "yarn build:types && yarn build:js",
-    "bundle": "rollup -c"
+    "build:types": "tsc -m AMD -d --outFile index.js  --emitDeclarationOnly --sourceRoot src/",
+    "build": "build:types rollup -c"
+  },
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ],
+  "browserify": {
+    "transform": [
+      "loose-envify"
+    ]
   }
 }

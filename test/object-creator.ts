@@ -8,7 +8,6 @@ export default function ({ length = 10, min = 0, max = 1000 }: { length?: number
     let add = 0;
     let flag: null | number = null;
     for (let i = 65; i + 57 * add < length + 65; i++) {
-        let n: null | number = null;
         if (i > 122) {
             add++;
             i = 65;

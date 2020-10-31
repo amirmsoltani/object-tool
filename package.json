@@ -59,7 +59,7 @@
   "scripts": {
     "test": "jest",
     "build:types": "tsc -m AMD -d --outFile index.js  --emitDeclarationOnly --sourceRoot src/",
-    "build": "build:types rollup -c"
+    "build": "yarn build:types && rollup -c"
   },
   "npmFileMap": [
     {

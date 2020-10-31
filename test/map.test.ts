@@ -16,7 +16,7 @@ test("Map: Test skip if return skip", () => {
 test("Map: Test return value after map", () => {
     const ob = creator({});
     const al = creator({});
-    expect(map(ob, (key, value) => {
+    expect(map(ob, (key) => {
         return { key, value: al[key] }
     })).toEqual(al);
 })

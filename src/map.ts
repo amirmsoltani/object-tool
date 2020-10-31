@@ -5,7 +5,7 @@ const skip = { key: 'skip', value: 'skip' };
  * @template {{[key:string]:any}} T
  * @template {{[key:string]:any}} O
  * @param {T} ob Input object for map operation
- * @param {(key:string,value:any,{index:number,skip:object})=>{key:string|number,calue:any}} callbackFn Callback is used to change the values sent . If you want to skip the value sent, return the skip value
+ * @param {(key:string,value:any,{index:number,skip:object})=>{key:string|number,value:any}} callbackFn Callback is used to change the values sent . If you want to skip the value sent, return the skip value
  * @returns {O} After deleting the values from the object, a new object returns
  */
 export default function map<T = { [key: string]: any }, O = { [key: string]: any }>

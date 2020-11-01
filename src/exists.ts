@@ -22,10 +22,10 @@
  > o.exists({ a: 1}, { a: function(n){ return n > 1; } })
  false
  */
-export default function exists<T extends { [key: string]: any }> (
+export default function exists<T extends { [key: string]: any }>(
   ob: T,
   query: {
-    [key in keyof T]: string | number | RegExp | ((property: T[key]) => boolean)
+    [key in string]: string | number | RegExp | ((property: any) => boolean)
   }
 ): boolean {
   for (const key in query) {
@@ -45,7 +45,6 @@ export default function exists<T extends { [key: string]: any }> (
         continue
       } else if (
         typeof value === 'function' &&
-        // @ts-ignore
         value(ob[key])
       ) {
         continue
@@ -53,5 +52,5 @@ export default function exists<T extends { [key: string]: any }> (
       return false
     } else return false
   }
-  return false
+  return true
 }

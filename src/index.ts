@@ -4,6 +4,7 @@ import mapToArray from './mapToArray'
 import etch from './etch'
 import len from './len'
 import keys from './keys'
+import exists from './exists';
 
 module.exports = {
   filter,
@@ -11,5 +12,6 @@ module.exports = {
   mapToArray,
   etch,
   len,
-  keys
+  keys,
+  exists
 }

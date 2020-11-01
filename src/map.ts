@@ -11,7 +11,17 @@ const skip = { key: 'skip', value: 'skip' };
 export default function map<T = { [key: string]: any }, O = { [key: string]: any }>
     (
         ob: T,
-        callbackFn: (key: keyof T, value: T[keyof T], options: { skip: typeof skip, index: number }) => { key: string | number, value: any } | typeof skip
+        callbackFn: (
+            key: keyof T,
+            value: T[keyof T],
+            options: {
+                skip: typeof skip,
+                index: number
+            }
+        ) => {
+            key: string | number,
+            value: any
+        } | typeof skip
     ): O {
     const result: { [key: string]: any } = {};
     Object.entries(ob).forEach((array, index) => {

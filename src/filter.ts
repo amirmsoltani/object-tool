@@ -8,7 +8,11 @@
 export default function filter<T = { [key: string]: any }>
     (
         ob: T,
-        callbackFn: (key: keyof T, value: T[keyof T], index: number) => boolean
+        callbackFn: (
+            key: keyof T,
+            value: T[keyof T],
+            index: number
+        ) => boolean
     ): T {
     const result: { [key: string]: any } = {};
     Object.entries(ob).forEach((array, index) => {

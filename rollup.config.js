@@ -22,7 +22,7 @@ export default [
     // CommonJs
     {
         input: 'src/index.ts',
-        output: { file: 'lib/redux.js', format: 'cjs', indent: false },
+        output: { file: 'lib/index.js', format: 'cjs', indent: false },
         external: [],
         plugins: [nodeResolve({
             extensions

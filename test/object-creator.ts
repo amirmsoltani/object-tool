@@ -11,6 +11,7 @@ export default function ({ length = 10, min = 0, max = 1000 }: { length?: number
         if (i > 122) {
             add++;
             i = 65;
+            continue;
         }
         else if (i > 90 && i < 97)
             flag = i - 43;

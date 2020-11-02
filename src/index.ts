@@ -6,6 +6,7 @@ import len from './len'
 import keys from './keys'
 import exists from './exists'
 import union from './union'
+import clone from './clone'
 
 module.exports = {
   filter,
@@ -15,5 +16,6 @@ module.exports = {
   len,
   keys,
   exists,
-  union
+  union,
+  clone
 }

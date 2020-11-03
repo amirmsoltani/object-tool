@@ -8,6 +8,7 @@ import exists from './exists'
 import union from './union'
 import clone from './clone'
 import every from './every'
+import except from './except'
 
 module.exports = {
   filter,
@@ -19,5 +20,6 @@ module.exports = {
   exists,
   union,
   clone,
-  every
+  every,
+  except
 }

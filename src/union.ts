@@ -15,7 +15,7 @@ export default function union<T extends { [key: string]: any }> (
 ): { [key: string]: any } {
   let output = {}
   args.forEach((property) => {
-    output = { ...output, ...property }
+    output = Object.assign(output, property)
   })
   return output
 }

@@ -1,9 +1,45 @@
 /**
- * With the help of this function, you can trace object
- * @template {{[key:string]:any}} T
- * @param {T} ob Input object for etch operation
- * @param {(key:string,value:any,{index:number,skip:object})=>void} callbackFn Callback is used to send object information
- * @returns {void} After deleting the values from the object, a new object returns
+ * @callback etchCallback
+ * @param {string} [key] keyof ob
+ * @param {*} [value] valueOf ob
+ * @param {number} [index] indexOf ob
+ * @returns {void}
+ *
+ * @example
+ *
+ * >let add = 0;
+ * >const newOb = {}
+ * >function callbackFn(key,value,index){
+ *  if(type of value === "number")
+ * { add += value }
+ *
+ *  new Ob[key] = {value:value,index:index}
+ * }
+ */
+/**
+ * All properties are sent in the input sent to the callback and you can perform your desired operations on the data
+ * @since 0.1.0
+ * @param {Object} ob Input Object
+ * @param {etchCallback} callbackFn Callback is used to send object property
+ * @returns {void}
+ * @see etch
+ * @example
+ *
+ * >let add = 0;
+ * >const newOb = {}
+ * function callbackFn(key,value,index){
+ *  if(type of value === "number")
+ * { add += value }
+ *
+ *  new Ob[key] = {value:value,index:index}
+ * }
+ *
+ * > ot.etch({one:1,tow:2,three:"javascript",four:"example"},callbackFn)
+ *
+ * > console.log(add);
+ * 3
+ * >console.log(newOb);
+ * {three:{value:"javascript",index:2},four:{value:"example",index:3}
  */
 export default function filter<T = { [key: string]: any }> (
   ob: T,

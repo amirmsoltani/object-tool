@@ -6,11 +6,11 @@ const skip = { key: 'skip', value: 'skip' }
  * @property {*} value
  */
 /**
- * All properties are sent to this callback as etch and after processing the return value, it replaces the previous property.
+ * All properties are sent to this callback as {@link etch} and after processing the return value, it replaces the previous property.
  * @callback mapCallback
  * @param {string} [key] keyof ob
  * @param {*} [value] valueOf ob
- * @param {Object} [options] call back options
+ * @param {Object} [options] callback options
  * @param {Object} [options.skip] If you return this value, the function will pass over this property
  * @note If you return the skip parameter, the operator passes over that property and it does not move to the output.
  * @param {number} [options.index] indexOf ob
@@ -31,7 +31,7 @@ const skip = { key: 'skip', value: 'skip' }
  * @since 0.1.0
  * @param {Object} [ob] Object Input object properties are sent to callbackFn
  * @param {mapCallback} [callbackFn] Callback is used to change the values sent . If you want to skip the value sent, return the skip value
- * @returns {O}
+ * @returns {Object}
  * @see map
  * @example
  *

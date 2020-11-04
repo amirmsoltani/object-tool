@@ -19,8 +19,8 @@
 /**
  * All properties are sent in the input sent to the callback and you can perform your desired operations on the data
  * @since 0.1.0
- * @param {Object} ob Input Object
- * @param {etchCallback} callbackFn Callback is used to send object property
+ * @param {Object} [ob] Input Object
+ * @param {etchCallback} [callbackFn] Callback is used to send object property
  * @returns {void}
  * @see etch
  * @example
@@ -34,10 +34,10 @@
  *  new Ob[key] = {value:value,index:index}
  * }
  *
- * > ot.etch({one:1,tow:2,three:"javascript",four:"example"},callbackFn)
+ * > ot.etch({one:9,tow:2,three:"javascript",four:"example"},callbackFn)
  *
  * > console.log(add);
- * 3
+ * 11
  * >console.log(newOb);
  * {three:{value:"javascript",index:2},four:{value:"example",index:3}
  */

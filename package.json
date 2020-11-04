@@ -64,8 +64,9 @@
   },
   "scripts": {
     "test": "jest",
+    "doc": "node doc.js",
     "build:types": "tsc -m AMD -d --outFile index.js  --emitDeclarationOnly --sourceRoot src/",
-    "build": "yarn build:types && rollup -c"
+    "build": "yarn build:types && rollup -c && yarn doc"
   },
   "npmFileMap": [
     {

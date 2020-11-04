@@ -29,8 +29,8 @@ const skip = { key: 'skip', value: 'skip' }
 /**
  * Modifies the input object based on the callback and returns a new object
  * @since 0.1.0
- * @param {Object} ob Object Input object properties are sent to callbackFn
- * @param {mapCallback} callbackFn Callback is used to change the values sent . If you want to skip the value sent, return the skip value
+ * @param {Object} [ob] Object Input object properties are sent to callbackFn
+ * @param {mapCallback} [callbackFn] Callback is used to change the values sent . If you want to skip the value sent, return the skip value
  * @returns {O}
  * @see map
  * @example

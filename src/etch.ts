@@ -41,7 +41,7 @@
  * >console.log(newOb);
  * {three:{value:"javascript",index:2},four:{value:"example",index:3}
  */
-export default function filter<T = { [key: string]: any }> (
+export default function etch<T = { [key: string]: any }> (
   ob: T,
   callbackFn: (key: keyof T, value: T[keyof T], index: number) => void
 ): void {

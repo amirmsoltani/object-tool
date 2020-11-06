@@ -6,7 +6,7 @@
  * @param {*} input The value to recursively clone.
  * @param {number} [depth=0] Depth that the function should copy , default value is 0 (just copy first layer)
  * @note If the value of the submitted depth is -1, all references will be cloned
- * @returns {*} Returns the deep cloned value.
+ * @returns {*}
  * @see clone
  *
  * @example

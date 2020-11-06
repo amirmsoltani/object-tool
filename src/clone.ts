@@ -1,21 +1,42 @@
 /**
  * This method is for copying functions with specified depth.
- * You can specify how deep to copy objects or arrays for you
+ * You can specify how deep to copy objects or arrays
  *
- * // *Note If the value of the submitted depth is -1, all references will be cloned
  * @since 0.1.0
- * @category Lang
  * @param {*} input The value to recursively clone.
- * @param {number=0} depth Depth that the function should copy
- * @returns {*} Returns the deep cloned value.
+ * @param {number} [depth=0] Depth that the function should copy , default value is 0 (just copy first layer)
+ * @note If the value of the submitted depth is -1, all references will be cloned
+ * @returns {*}
  * @see clone
+ *
  * @example
+ * // Object cloning and object reference comparison
  *
- * const objects = [{ 'a': 1 }, { 'b': 2 }]
+ * const objects = { a : 1 , b : 2 , c: { a:1 , b:2 }, d: [1 , 2 , 3]}
  *
- * > const deep = ot.clone(objects)
- * > console.log(deep[0] === objects[0])
- * > //false
+ * > deep = ot.clone(objects)
+ *
+ * > console.log( deep === objects , deep.c === objects.c , deep.d === objects.c )
+ * false , true , true
+ *
+ * > deep = ot.clone( objects , -1 )
+ *
+ * > console.log( deep === objects , deep.c === objects.c , deep.d === objects.d )
+ * false , false , false
+ *
+ * @example
+ * // Clone arrays and compare array references
+ *
+ * > const arrays = [ 1 , 2 , [ 1 , 2 ] , { a : 1 , b : 2 } ]
+ * > let deep = ot.clone(arrays)
+ *
+ * > console.log( deep === arrays , deep[2] === arrays[2] , deep[3] === arrays[3] )
+ * false , true , true
+ *
+ * > deep = ot.clone(arrays,-1)
+ *
+ * > console.log( deep === arrays , deep[2] === arrays[2] , deep[3] === arrays[3] )
+ * false , false , false
  */
 export default function clone<T extends { [key: string]: any } | Array<any>> (
   input: T,

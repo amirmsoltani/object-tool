@@ -64,28 +64,14 @@
  *
  */
 
-import filter from './filter'
-import map from './map'
-import mapToArray from './mapToArray'
-import etch from './etch'
-import len from './len'
-import keys from './keys'
-import exists from './exists'
-import union from './union'
-import clone from './clone'
-import every from './every'
-import except from './except'
-
-module.exports = {
-  filter,
-  map,
-  mapToArray,
-  etch,
-  len,
-  keys,
-  exists,
-  union,
-  clone,
-  every,
-  except
-}
+export { default as map } from './map'
+export { default as mapToArray } from './mapToArray'
+export { default as etch } from './etch'
+export { default as keys } from './keys'
+export { default as len } from './len'
+export { default as exists } from './exists'
+export { default as union } from './union'
+export { default as clone } from './clone'
+export { default as every } from './every'
+export { default as except } from './except'
+export { default as filter } from './filter'

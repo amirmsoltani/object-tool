@@ -3,7 +3,7 @@ import babel from 'rollup-plugin-babel'
 import replace from '@rollup/plugin-replace'
 import typescript from 'rollup-plugin-typescript2'
 import { terser } from 'rollup-plugin-terser'
-
+import dts from 'rollup-plugin-dts'
 import pkg from './package.json'
 
 const extensions = ['.ts']
@@ -140,5 +140,10 @@ export default [
         }
       })
     ]
+  },
+  {
+    input: './types/index.d.ts',
+    output: [{ file: './index.d.ts', format: 'es' }],
+    plugins: [dts()]
   }
 ]

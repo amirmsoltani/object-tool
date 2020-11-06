@@ -1,18 +1,6 @@
-## Modules
-
-<dl>
-<dt><a href="#module_ot">ot</a></dt>
-<dd></dd>
-</dl>
-
 ## Functions
 
 <dl>
-<dt><a href="#filter">filter([ob], [callbackFn])</a> ⇒ <code>Object</code></dt>
-<dd><p>Sends the input value of the function as key and value to callbackFn,
- and if the correct value is returned by callbackFn,
- it creates a new object with the property and sends it to the output.</p>
-</dd>
 <dt><a href="#map">map([ob], [callbackFn])</a> ⇒ <code>Object</code></dt>
 <dd><p>Modifies the input object based on the callback and returns a new object</p>
 </dd>
@@ -22,11 +10,11 @@
 <dt><a href="#etch">etch([ob], [callbackFn])</a> ⇒ <code>void</code></dt>
 <dd><p>All properties are sent in the input sent to the callback and you can perform your desired operations on the data</p>
 </dd>
-<dt><a href="#len">len([ob])</a> ⇒ <code>number</code></dt>
-<dd><p>This function is used to get the number of values inside the object</p>
-</dd>
 <dt><a href="#keys">keys([ob])</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
 <dd><p>This function is used to capture the array of entity keys inside the object.</p>
+</dd>
+<dt><a href="#len">len([ob])</a> ⇒ <code>number</code></dt>
+<dd><p>This function is used to get the number of values inside the object</p>
 </dd>
 <dt><a href="#exists">exists([ob], query)</a> ⇒ <code>boolean</code></dt>
 <dd><p>returns true if the key/value pairs in <code>query</code> also exist identically in <code>object</code>.
@@ -45,14 +33,16 @@ You can specify how deep to copy objects or arrays</p>
 <dt><a href="#except">except([ob], [keys], [deleteFromRe])</a> ⇒ <code>Object</code></dt>
 <dd><p>Returns a clone of the object minus the specified properties.</p>
 </dd>
+<dt><a href="#filter">filter([ob], [callbackFn])</a> ⇒ <code>Object</code></dt>
+<dd><p>Sends the input value of the function as key and value to callbackFn,
+ and if the correct value is returned by callbackFn,
+ it creates a new object with the property and sends it to the output.</p>
+</dd>
 </dl>
 
 ## Typedefs
 
 <dl>
-<dt><a href="#filterCallback">filterCallback</a> ⇒ <code>boolean</code></dt>
-<dd><p>Submissions are reviewed by the user and the boolean value is returned</p>
-</dd>
 <dt><a href="#MapCallbackType">MapCallbackType</a> : <code>Object</code></dt>
 <dd><p>type mapCallback</p>
 </dd>
@@ -68,38 +58,11 @@ You can specify how deep to copy objects or arrays</p>
 <dt><a href="#EveryCallback">EveryCallback</a> ⇒ <code>boolean</code></dt>
 <dd><p>All properties are given to this callback and it can return the boolean value after processing</p>
 </dd>
+<dt><a href="#filterCallback">filterCallback</a> ⇒ <code>boolean</code></dt>
+<dd><p>Submissions are reviewed by the user and the boolean value is returned</p>
+</dd>
 </dl>
 
-<a name="module_ot"></a>
-
-## ot
-**Summary**: <pre>This package is for easy use of objects in JavaScript and typescript.The functions that are repeated in JavaScript are written in typescript for convenience, which is shown in the example below.</pre>  
-**Example**  
-```js
-const ob = { a : 1 , b : 'example' , c : [1 , 2, 3] };// javascript> const keys = Object.keys(ob)// type return string[] | Array<String>> ob[keys[0]]// You will encounter an error using this method in typescript// object-toolconst keys = ot.keys(ob)// type return "a" | "b" | "c"> ob[keys[0]]// You will not get any error and the value of 1 will be returned
-```
-**Example**  
-```js
-// How to use this package is as follows> import ot from 'object-tool';> ot.keys({a:1,b:2})['a','b']// or> import {keys} from 'object-tool';keys({a:1,b:2})['a','b']// or> const ot = require('object-tool')ot.keys({a:1,b:2})['a','b']// or> const {keys} = require('object-tool');keys({a:1,b:2})['a','b']// or
-```
-<a name="filter"></a>
-
-## filter([ob], [callbackFn]) ⇒ <code>Object</code>
-Sends the input value of the function as key and value to callbackFn, and if the correct value is returned by callbackFn, it creates a new object with the property and sends it to the output.
-
-**Kind**: global function  
-**See**: filter  
-**Since**: 0.1.0  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| [ob] | <code>Object</code> | Object Input object properties are sent to callbackFn |
-| [callbackFn] | [<code>filterCallback</code>](#filterCallback) | Callback to perform operations |
-
-**Example**  
-```js
-> function() callbackFn(key,value,index) { return value%2 === 0 || key.includes('filter') || index === 5}> ot.filter({one:1,tow:2,three:3,four:4},callbackFn){tow:2,four:4}> ot.filter({map:12,reduce:55,filter:1,etch:11},callbackFn){map:12,filter:1}> ot.filter({one:1,three:3,five:5,seven:7,nine:9,eleven:11},callbackFn){eleven:11}
-```
 <a name="map"></a>
 
 ## map([ob], [callbackFn]) ⇒ <code>Object</code>
@@ -154,22 +117,6 @@ All properties are sent in the input sent to the callback and you can perform yo
 ```js
 >let add = 0;>const newOb = {}function callbackFn(key,value,index){ if(type of value === "number"){ add += value } new Ob[key] = {value:value,index:index}}> ot.etch({one:9,tow:2,three:"javascript",four:"example"},callbackFn)> console.log(add);11>console.log(newOb);{three:{value:"javascript",index:2},four:{value:"example",index:3}
 ```
-<a name="len"></a>
-
-## len([ob]) ⇒ <code>number</code>
-This function is used to get the number of values inside the object
-
-**Kind**: global function  
-**Since**: 0.1.0  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| [ob] | <code>Object</code> | Input object to count all properties |
-
-**Example**  
-```js
->ot.len({one:1,tow:2})2> ot.len(one:1,tow:2,three:3,four:{one:1})4
-```
 <a name="keys"></a>
 
 ## keys([ob]) ⇒ <code>Array.&lt;String&gt;</code>
@@ -185,6 +132,22 @@ This function is used to capture the array of entity keys inside the object.
 **Example**  
 ```js
 >ot.keys({one:1,tow:2,three:3})["one","tow","three"]
+```
+<a name="len"></a>
+
+## len([ob]) ⇒ <code>number</code>
+This function is used to get the number of values inside the object
+
+**Kind**: global function  
+**Since**: 0.1.0  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [ob] | <code>Object</code> | Input object to count all properties |
+
+**Example**  
+```js
+>ot.len({one:1,tow:2})2> ot.len(one:1,tow:2,three:3,four:{one:1})4
 ```
 <a name="exists"></a>
 
@@ -299,22 +262,23 @@ Returns a clone of the object minus the specified properties.
 ```js
 > o.except({ a: 1, b: 2, c: 3}, 'b'){ a: 1, c: 3 }> o.except({ a: 1, b: 2, c: 3}, ['b', 'a']){ c: 3 }
 ```
-<a name="filterCallback"></a>
+<a name="filter"></a>
 
-## filterCallback ⇒ <code>boolean</code>
-Submissions are reviewed by the user and the boolean value is returned
+## filter([ob], [callbackFn]) ⇒ <code>Object</code>
+Sends the input value of the function as key and value to callbackFn, and if the correct value is returned by callbackFn, it creates a new object with the property and sends it to the output.
 
-**Kind**: global typedef  
+**Kind**: global function  
+**See**: filter  
+**Since**: 0.1.0  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [key] | <code>string</code> | keyof ob |
-| [value] | <code>\*</code> | valueOf ob |
-| [index] | <code>number</code> | indexOf ob |
+| [ob] | <code>Object</code> | Object Input object properties are sent to callbackFn |
+| [callbackFn] | [<code>filterCallback</code>](#filterCallback) | Callback to perform operations |
 
 **Example**  
 ```js
-// If the word (of) is inside the key, the value true returns>function(key){ return key.includes('of')}//If the type (value) is a number and more than 10, it must return true>function(key,value){ return typeof value === "number" && value > 10}//If the index is divisible by 10, it returns true>function(key,value,index){return index % 10 !== 0}
+> function() callbackFn(key,value,index) { return value%2 === 0 || key.includes('filter') || index === 5}> ot.filter({one:1,tow:2,three:3,four:4},callbackFn){tow:2,four:4}> ot.filter({map:12,reduce:55,filter:1,etch:11},callbackFn){map:12,filter:1}> ot.filter({one:1,three:3,five:5,seven:7,nine:9,eleven:11},callbackFn){eleven:11}
 ```
 <a name="MapCallbackType"></a>
 
@@ -401,4 +365,21 @@ All properties are given to this callback and it can return the boolean value af
 **Example**  
 ```js
 > function EveryCallback(value,key){ return keyof value === 'number' && value > 3 && key.includes('i')}
+```
+<a name="filterCallback"></a>
+
+## filterCallback ⇒ <code>boolean</code>
+Submissions are reviewed by the user and the boolean value is returned
+
+**Kind**: global typedef  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [key] | <code>string</code> | keyof ob |
+| [value] | <code>\*</code> | valueOf ob |
+| [index] | <code>number</code> | indexOf ob |
+
+**Example**  
+```js
+// If the word (of) is inside the key, the value true returns>function(key){ return key.includes('of')}//If the type (value) is a number and more than 10, it must return true>function(key,value){ return typeof value === "number" && value > 10}//If the index is divisible by 10, it returns true>function(key,value,index){return index % 10 !== 0}
 ```

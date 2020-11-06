@@ -1,8 +1,22 @@
 /**
+ * All properties are given to this callback and it can return the boolean value after processing
+ * @callback EveryCallback
+ * @param {*} [value] valueOf ob
+ * @param {string} [key] keyof ob
+ * @returns {boolean}
+ *
+ * @example
+ *
+ * > function EveryCallback(value,key)
+ * {
+ *  return keyof value === 'number' && value > 3 && key.includes('i')
+ * }
+ */
+/**
  * Returns true if the supplied iterator function returns true for every property in the object
  * @since 0.1.0
- * @param {Object} - the object to inspect
- * @param {Function} - the iterator function to run against each key/value pair, the args are `(value, key)`.
+ * @param {Object} [ob] - the object to inspect
+ * @param {EveryCallback} - the iterator function to run against each key/value pair, the args are `(value, key)`.
  * @returns {boolean}
  * @see every
  * @example

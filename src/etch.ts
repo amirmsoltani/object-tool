@@ -1,4 +1,5 @@
 /**
+ * All properties are sent to this callback and there is no return value
  * @callback etchCallback
  * @param {string} [key] keyof ob
  * @param {*} [value] valueOf ob

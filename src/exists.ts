@@ -2,7 +2,6 @@
  returns true if the key/value pairs in `query` also exist identically in `object`.
  Also supports RegExp values in `query`. If the `query` property begins with `!` then test is negated.
  @since 0.1.0
- @method exists
  @param {Object} [ob]  the object to examine
  @param {Object} query  the key/value pairs to look for
  @returns {boolean}

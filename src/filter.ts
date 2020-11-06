@@ -51,9 +51,3 @@ export default function filter<T = { [key: string]: any }> (
   })
   return <T>result
 }
-
-console.log(
-  filter({}, (_, value) => {
-    return value % 2 === 0
-  })
-)

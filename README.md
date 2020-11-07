@@ -1,3 +1,10 @@
+## Modules
+
+<dl>
+<dt><a href="#module_ot">ot</a></dt>
+<dd></dd>
+</dl>
+
 ## Functions
 
 <dl>
@@ -63,6 +70,18 @@ You can specify how deep to copy objects or arrays</p>
 </dd>
 </dl>
 
+<a name="module_ot"></a>
+
+## ot
+**Summary**: <pre>This package is for easy use of objects in JavaScript and typescript.The functions that are repeated in JavaScript are written in typescript for convenience, which is shown in the example below.</pre>  
+**Example**  
+```js
+const ob = { a : 1 , b : 'example' , c : [1 , 2, 3] };// javascript> const keys = Object.keys(ob)// type return string[] | Array<String>> ob[keys[0]]// You will encounter an error using this method in typescript// object-toolconst keys = ot.keys(ob)// type return "a" | "b" | "c"> ob[keys[0]]// You will not get any error and the value of 1 will be returned
+```
+**Example**  
+```js
+// How to use this package is as follows> import ot from 'object-tool';> ot.keys({a:1,b:2})['a','b']// or> import {keys} from 'object-tool';keys({a:1,b:2})['a','b']// or> const ot = require('object-tool')ot.keys({a:1,b:2})['a','b']// or> const {keys} = require('object-tool');keys({a:1,b:2})['a','b']// or
+```
 <a name="map"></a>
 
 ## map([ob], [callbackFn]) ⇒ <code>Object</code>

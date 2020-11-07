@@ -63,15 +63,42 @@
  * // or
  *
  */
+import map from './map'
+import mapToArray from './mapToArray'
+import etch from './etch'
+import keys from './keys'
+import len from './len'
+import exists from './exists'
+import union from './union'
+import clone from './clone'
+import every from './every'
+import except from './except'
+import filter from './filter'
 
-export { default as map } from './map'
-export { default as mapToArray } from './mapToArray'
-export { default as etch } from './etch'
-export { default as keys } from './keys'
-export { default as len } from './len'
-export { default as exists } from './exists'
-export { default as union } from './union'
-export { default as clone } from './clone'
-export { default as every } from './every'
-export { default as except } from './except'
-export { default as filter } from './filter'
+export {
+  map,
+  mapToArray,
+  etch,
+  keys,
+  exists,
+  len,
+  union,
+  clone,
+  every,
+  except,
+  filter
+}
+
+export default {
+  map,
+  mapToArray,
+  etch,
+  keys,
+  exists,
+  len,
+  union,
+  clone,
+  every,
+  except,
+  filter
+}

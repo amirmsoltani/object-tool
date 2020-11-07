@@ -402,4 +402,19 @@ declare function filter<T = {
     [key: string]: any;
 }>(ob: T, callbackFn: (key: keyof T, value: T[keyof T], index: number) => boolean): T;
 
+declare const _default: {
+    map: typeof map;
+    mapToArray: typeof mapToArray;
+    etch: typeof etch;
+    keys: typeof keys;
+    exists: typeof exists;
+    len: typeof len;
+    union: typeof union;
+    clone: typeof clone;
+    every: typeof every;
+    except: typeof except;
+    filter: typeof filter;
+};
+
+export default _default;
 export { clone, etch, every, except, exists, filter, keys, len, map, mapToArray, union };
